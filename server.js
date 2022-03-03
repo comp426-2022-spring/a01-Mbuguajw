@@ -2,7 +2,7 @@ const http = require('http')
 
 const fs = require("fs")
 
-const args = require("minimist")(process.arv.slice(2))
+const args = require("minimist")(process.argv.slice(2))
 
 args["port"]
 
@@ -20,7 +20,7 @@ const server = http.createServer((req, res) => {
     res.statusCode = 200
     res.setHeader('Content-Type', 'text/html')
     res.end(data)
-    })
+})
 
 server.listen(port, () => {
     console.log(`Server running at port ${port}`)
